@@ -1,0 +1,14 @@
+# Bucca Start #
+
+Bucca start is a FS mounter and Apache reloader. 
+It uses a password and a yubico key to autenticate.
+
+### Requisites ###
+
+* OS: GNU/Linux, currently tested on Ubuntu GNU/Linux 14.04 - 64bits
+* Ruby: running on version 2.1.8
+* Rails 4.0.12, Hobo 2.1.1 and the remaining dependencies from Gemfile.
+
+
+
+

@@ -1,0 +1,45 @@
+<page title="Home">
+
+  <body: class="front-page"/>
+  <content:>
+    <header class="content-header hero-unit">
+      <h1>Welcome to <app-name/></h1>
+      <section class="welcome-message">
+        <h3>Asistente de arranque de Bucca</h3>
+        <ul>
+          <li>Por favor, rellena los siguientes campos:</li>
+        </ul>
+
+        <% if User.count == 0 -%>
+          <h3 style="margin-top: 20px;">There are no user accounts - please provide the details of the site administrator</h3>
+          <form with="&this || User.new" without-cancel>
+            <field-list: fields="name, email_address, password, password_confirmation"/>
+            <submit: label="Register Administrator"/>
+          </form>
+        <% end -%>
+
+        <% if current_user.administrator? %>
+          ENCFS
+          <div style='background: #{@enc_color};' class="circleBase type1"></div>
+          RAILS
+          <div style='background: #{@sg_color};' class="circleBase type1"></div>
+          <form action="/start/up/" method="POST">
+            Contraseña:<br/>
+            <input type="password" name="pass"/>
+            <br/>
+            Yubikey:<br/>
+            <input type="password" name="yubikey"/>
+            <br/>
+            <input type="submit" value="Submit"/>
+          </form>
+        <% end %>
+
+      </section>
+    </header>
+
+    <section class="content-body">
+    </section>
+  </content:>
+
+</page>
+
